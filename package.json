@@ -4,7 +4,6 @@
     "browserify": "^9.0.3",
     "gulp": "^3.8.11",
     "gulp-load-plugins": "^0.9.0",
-    "gulp-webserver": "^0.9.0",
     "uniq": "^1.0.1",
     "watchify": "^2.6.2"
   },

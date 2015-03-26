@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "babelify": "^5.0.4",
+    "browser-sync": "^2.4.0",
     "browserify": "^9.0.3",
     "gulp": "^3.8.11",
     "gulp-load-plugins": "^0.9.0",
@@ -8,8 +9,10 @@
     "watchify": "^2.6.2"
   },
   "scripts": {
+    "server": "browser-sync start --files 'app/lib/*, app/index.html' --server 'app'",
     "watch": "./node_modules/watchify/bin/cmd.js ./app/src/example.js -o app/lib/bundle.js -v -d",
-    "build": "browserify app/src/example.js > app/lib/bundle.js"
+    "build": "browserify app/src/example.js > app/lib/bundle.js",
+    "start": "npm run server & npm run watch"
   },
   "browserify": {
     "transform": [

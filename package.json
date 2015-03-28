@@ -26,5 +26,8 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "flummox": "^3.2.1"
   }
 }

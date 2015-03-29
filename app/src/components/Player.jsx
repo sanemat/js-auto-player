@@ -29,6 +29,7 @@ let Player = React.createClass({
 
   _onEnd: function() {
     console.log('ENDED');
+    this._next();
   },
 
   render: function() {

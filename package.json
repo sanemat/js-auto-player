@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "flummox": "^3.2.1",
-    "react": "^0.13.1"
+    "react": "^0.13.1",
+    "react-youtube": "git://github.com/sanemat/react-youtube#chore/react-v0-13"
   }
 }

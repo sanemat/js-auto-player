@@ -10,7 +10,7 @@ let Player = React.createClass({
       url: url
     };
   },
-  _changeUrl: function() {
+  _next: function() {
     let newUrl = this.state.url === url ? url2 : url;
     this.setState({url: newUrl});
   },
@@ -50,7 +50,7 @@ let Player = React.createClass({
           onPause={this._onPause}
           onEnd={this._onEnd}
         />
-        <button onClick={this._changeUrl}>Next</button>
+        <button onClick={this._next}>Next</button>
       </div>
     );
   }

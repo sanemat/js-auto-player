@@ -2,12 +2,17 @@ import React from 'react';
 import YouTube from 'react-youtube';
 
 var url = 'https://www.youtube.com/watch?v=MzLJxkOF6Sc';
+var url2 = 'https://www.youtube.com/watch?v=TXkRJHAVmdw';
 
 let Player = React.createClass({
   getInitialState: function() {
     return {
       url: url
     };
+  },
+  _changeUrl: function() {
+    let newUrl = this.state.url === url ? url2 : url;
+    this.setState({url: newUrl});
   },
 
   _onReady: function() {
@@ -36,14 +41,17 @@ let Player = React.createClass({
     };
 
     return (
-      <YouTube
-        url={this.state.url}
-        opts={playerOptions}
-        onReady={this._onReady}
-        onPlay={this._onPlay}
-        onPause={this._onPause}
-        onEnd={this._onEnd}
-      />
+      <div className='player'>
+        <YouTube
+          url={this.state.url}
+          opts={playerOptions}
+          onReady={this._onReady}
+          onPlay={this._onPlay}
+          onPause={this._onPause}
+          onEnd={this._onEnd}
+        />
+        <button onClick={this._changeUrl}>Next</button>
+      </div>
     );
   }
 });

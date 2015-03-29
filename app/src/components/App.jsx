@@ -1,5 +1,8 @@
 import React from 'react';
 import Title from './Title.jsx';
+import SearchBox from './SearchBox.jsx';
+import FilterBox from './FilterBox.jsx';
+import Player from './Player.jsx';
 
 let App = React.createClass({
 
@@ -9,7 +12,9 @@ let App = React.createClass({
     return (
       <div>
         <Title flux={flux} />
-        Hello Components!
+        <SearchBox flux={flux} />
+        <FilterBox flux={flux} />
+        <Player flux={flux} />
       </div>
     );
   }

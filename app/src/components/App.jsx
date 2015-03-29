@@ -1,4 +1,5 @@
 import React from 'react';
+import Title from './Title.jsx';
 
 let App = React.createClass({
 
@@ -6,9 +7,10 @@ let App = React.createClass({
     let { flux } = this.props;
 
     return (
-        <div>
-          Hello Components!
-        </div>
+      <div>
+        <Title flux={flux} />
+        Hello Components!
+      </div>
     );
   }
 

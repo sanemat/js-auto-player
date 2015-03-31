@@ -1,8 +1,8 @@
 import React from 'react';
 import Title from './Title.jsx';
-import SearchBox from './SearchBox.jsx';
-import FilterBox from './FilterBox.jsx';
-import Player from './Player.jsx';
+import Router from 'react-router';
+
+import { Link, RouteHandler } from 'react-router';
 
 let App = React.createClass({
 
@@ -11,10 +11,15 @@ let App = React.createClass({
 
     return (
       <div>
-        <Title flux={flux} />
-        <SearchBox flux={flux} />
-        <FilterBox flux={flux} />
-        <Player flux={flux} />
+        <header>
+          <Title flux={flux} />
+          <ul>
+            <li><Link to="app">Panel</Link></li>
+            <li><Link to="settings">Config</Link></li>
+          </ul>
+        </header>
+        {/* this is the important part */}
+        <RouteHandler/>
       </div>
     );
   }

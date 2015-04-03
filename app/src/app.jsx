@@ -18,9 +18,6 @@ let routes = (
   </Route>
 );
 
-Router.run(routes, Router.HistoryLocation, (Handler) => {
-  React.withContext(
-    { flux },
-    () => React.render(<Handler />, document.getElementById('auto-player-app'))
-  );
+Router.run(routes, (Handler) => {
+  React.render(<Handler flux={flux} />, document.getElementById('auto-player-app'));
 });

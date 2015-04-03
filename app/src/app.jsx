@@ -13,7 +13,7 @@ import { DefaultRoute, Route } from 'react-router';
 
 let routes = (
   <Route name="app" path="/" handler={App}>
-    <Route name="settings" handler={Config}/>
+    <Route name="settings" path="/settings" handler={Config}/>
     <DefaultRoute name="panel" handler={Panel}/>
   </Route>
 );

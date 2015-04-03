@@ -9,17 +9,14 @@
   },
   "scripts": {
     "server": "browser-sync start --files 'app/lib/*, app/index.html' --server 'app'",
-    "watch": "./node_modules/watchify/bin/cmd.js ./app/src/app.js -o app/lib/bundle.js -v -d",
+    "watch": "./node_modules/watchify/bin/cmd.js ./app/src/app.jsx -t [ babelify ] -o app/lib/bundle.js -v -d",
     "start": "npm run server & npm run watch",
-    "build": "NODE_ENV=production browserify -d -e ./app/src/app.js -t [ babelify --experimental ] > ./app/lib/bundle.js"
+    "build": "NODE_ENV=production browserify -d -e ./app/src/app.jsx -t [ babelify ] > ./app/lib/bundle.js"
   },
   "browserify": {
     "transform": [
       [
-        "babelify",
-        {
-          "experimental": true
-        }
+        "babelify"
       ]
     ]
   },

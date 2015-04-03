@@ -14,7 +14,7 @@ let App = React.createClass({
         <header>
           <Title flux={flux} />
           <ul>
-            <li><Link to="app">Panel</Link></li>
+            <li><Link to="panel">Panel</Link></li>
             <li><Link to="settings">Config</Link></li>
           </ul>
         </header>

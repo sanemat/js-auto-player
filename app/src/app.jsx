@@ -13,14 +13,11 @@ import { DefaultRoute, Route } from 'react-router';
 
 let routes = (
   <Route name="app" path="/" handler={App}>
-    <Route name="settings" handler={Config}/>
-    <DefaultRoute handler={Panel}/>
+    <Route name="settings" path="/settings" handler={Config}/>
+    <DefaultRoute name="panel" handler={Panel}/>
   </Route>
 );
 
-Router.run(routes, Router.HistoryLocation, (Handler) => {
-  React.withContext(
-    { flux },
-    () => React.render(<Handler />, document.getElementById('auto-player-app'))
-  );
+Router.run(routes, (Handler) => {
+  React.render(<Handler flux={flux} />, document.getElementById('auto-player-app'));
 });

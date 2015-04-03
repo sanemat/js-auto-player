@@ -14,7 +14,7 @@ import { DefaultRoute, Route } from 'react-router';
 let routes = (
   <Route name="app" path="/" handler={App}>
     <Route name="settings" handler={Config}/>
-    <DefaultRoute handler={Panel}/>
+    <DefaultRoute name="panel" handler={Panel}/>
   </Route>
 );
 
